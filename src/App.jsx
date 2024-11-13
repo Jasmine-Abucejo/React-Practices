@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function App() {
+  const navigate = useNavigate();
   const [count, setCount] = useState(0);
   const [message, setMessage] = useState("Zero");
   const increase = () => {
@@ -11,9 +13,11 @@ function App() {
     setCount(count - 1);
     display(count - 1);
   };
-  const reset = () => setCount(0);
+  const reset = () => {
+    setCount(0);
+    display(0);
+  };
   const display = (newCount) => {
-    console.log(document.getElementById("count").textContent);
     if (newCount < 0) {
       setMessage("Negative");
     } else if (newCount === 0) {
@@ -21,6 +25,9 @@ function App() {
     } else {
       setMessage("Positive");
     }
+  };
+  const next = () => {
+    navigate("/stopwatch");
   };
   return (
     <div style={{ justifyContent: "center" }}>
@@ -50,6 +57,12 @@ function App() {
       >
         The current count value is: {message}
       </div>
+      <button
+        style={{ marginLeft: "90vw", marginTop: "1em", padding: "2em" }}
+        onClick={next}
+      >
+        Next
+      </button>
     </div>
   );
 }
