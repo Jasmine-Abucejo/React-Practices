@@ -24,6 +24,12 @@ function Stopwatch() {
     setMins(0);
     setSec(0);
   };
+  const back = () => {
+    navigate("/");
+  };
+  const next = () => {
+    navigate("/todo");
+  };
   return (
     <div>
       <h1>Stopwatch</h1>
@@ -49,8 +55,12 @@ function Stopwatch() {
           gap: "90em",
         }}
       >
-        <button style={{ padding: "1em" }}>Previous</button>
-        <button style={{ padding: "1em" }}>Next</button>
+        <button style={{ padding: "1em" }} onClick={back}>
+          Previous
+        </button>
+        <button style={{ padding: "1em" }} onClick={next}>
+          Next
+        </button>
       </div>
     </div>
   );
