@@ -1,7 +1,14 @@
 import { useState } from "react";
-import { set } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 function Progressbar() {
+  const navigate = useNavigate();
+  const back = () => {
+    navigate("/todo");
+  };
+  const next = () => {
+    navigate("/submitform");
+  };
   const [percent, setPercent] = useState(0);
   const [computed, setComputed] = useState(0);
   const handleChange = (e) => {
@@ -42,15 +49,31 @@ function Progressbar() {
         </div>
       </div>
       <div style={{ marginTop: "1em" }}>
+        <progress value={percent * 0.01} /> {percent}%
         <form action="">
           <input
             type="number"
             name="percent"
             id="percent"
             onChange={handleChange}
-          />{" "}
+          />
           Input percentage
         </form>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          marginTop: "1em",
+          gap: "90em",
+        }}
+      >
+        <button style={{ padding: "1em" }} onClick={back}>
+          Previous
+        </button>
+        <button style={{ padding: "1em" }} onClick={next}>
+          Next
+        </button>
       </div>
     </div>
   );

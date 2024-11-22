@@ -5,6 +5,7 @@ import Stopwatch from "./Stopwatch.jsx";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Todo from "./Todo.jsx";
 import Progressbar from "./Progressbar.jsx";
+import Submitform from "./Submitform.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
@@ -13,6 +14,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Route path="/stopwatch" element={<Stopwatch />} />
       <Route path="/todo" element={<Todo />} />
       <Route path="/progressbar" element={<Progressbar />} />
+      <Route path="/submitform" element={<Submitform />} />
     </Routes>
   </BrowserRouter>
 );
