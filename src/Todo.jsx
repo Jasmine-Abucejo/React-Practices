@@ -23,7 +23,7 @@ function Todo() {
   const deleteTodo = (e) => {
     setTodos(todos.filter((todo) => todo.id !== e.id));
   };
-  const todoList = todos.map((todo, index) => {
+  const todoList = todos.map((todo) => {
     return (
       <li key={todo.id}>
         {todo.text} <button onClick={() => deleteTodo(todo)}>Delete</button>

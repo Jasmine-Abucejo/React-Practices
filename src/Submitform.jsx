@@ -8,7 +8,7 @@ function Submitform() {
     navigate("/progressbar");
   };
   const next = () => {
-    navigate("/submitform");
+    navigate("/contacts");
   };
   const { register, handleSubmit } = useForm();
   const [username, setUsername] = useState("");

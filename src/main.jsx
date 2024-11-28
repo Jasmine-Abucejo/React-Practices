@@ -6,6 +6,8 @@ import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Todo from "./Todo.jsx";
 import Progressbar from "./Progressbar.jsx";
 import Submitform from "./Submitform.jsx";
+import Maxcount from "./Maxcount.jsx";
+import Contacts from "./Contacts.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
@@ -15,6 +17,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Route path="/todo" element={<Todo />} />
       <Route path="/progressbar" element={<Progressbar />} />
       <Route path="/submitform" element={<Submitform />} />
+      <Route path="/maxcount" element={<Maxcount />} />
+      <Route path="/contacts" element={<Contacts />} />
     </Routes>
   </BrowserRouter>
 );
