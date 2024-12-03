@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import Navigator from "./Navigator.jsx";
 
 function App() {
-  const navigate = useNavigate();
   const [count, setCount] = useState(0);
   const [message, setMessage] = useState("Zero");
   const increase = () => {
@@ -57,12 +56,7 @@ function App() {
       >
         The current count value is: {message}
       </div>
-      <button
-        style={{ marginLeft: "90vw", marginTop: "1em", padding: "2em" }}
-        onClick={next}
-      >
-        Next
-      </button>
+      <Navigator next="./stopwatch" />
     </div>
   );
 }

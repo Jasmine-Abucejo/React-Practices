@@ -1,8 +1,7 @@
 import { useState, useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import Navigator from "./Navigator.jsx";
 
 function Stopwatch() {
-  const navigate = useNavigate();
   const [mins, setMins] = useState(0);
   const [sec, setSec] = useState(0);
   const timeRef = useRef(0);
@@ -24,19 +23,21 @@ function Stopwatch() {
     setMins(0);
     setSec(0);
   };
-  const back = () => {
-    navigate("/");
-  };
-  const next = () => {
-    navigate("/todo");
-  };
+
   return (
-    <div>
+    <div style={{ textAlign: "center", justifyContent: "center" }}>
       <h1>Stopwatch</h1>
       <p>
         {mins} mins {sec} secs
       </p>
-      <div style={{ display: "flex", flexDirection: "row", gap: "1em" }}>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          gap: "1em",
+          justifyContent: "center",
+        }}
+      >
         <button style={{ backgroundColor: "green" }} onClick={setTimer}>
           Start
         </button>
@@ -47,21 +48,8 @@ function Stopwatch() {
           Reset
         </button>
       </div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          marginTop: "1em",
-          gap: "90em",
-        }}
-      >
-        <button style={{ padding: "1em" }} onClick={back}>
-          Previous
-        </button>
-        <button style={{ padding: "1em" }} onClick={next}>
-          Next
-        </button>
-      </div>
+
+      <Navigator back="/" next="/todo" />
     </div>
   );
 }

@@ -1,16 +1,9 @@
 import { useState } from "react";
-import { json, useNavigate } from "react-router-dom";
-import { useForm } from "react-hook-form";
+import Navigator from "./Navigator.jsx";
 
 function Todo() {
-  const navigate = useNavigate();
   const [todos, setTodos] = useState([]);
-  const back = () => {
-    navigate("/stopwatch");
-  };
-  const next = () => {
-    navigate("/progressbar");
-  };
+
   const addTodo = () => {
     let input = document.getElementById("input").value;
     // console.log(input);
@@ -31,10 +24,18 @@ function Todo() {
     );
   });
   return (
-    <div>
+    <div style={{ textAlign: "center" }}>
       <h1>To Do</h1>
       <h3>Add To Do here:</h3>
-      <div style={{ display: "flex", flexDirection: "row", gap: "1em" }}>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          gap: "1em",
+          textAlign: "center",
+          justifyContent: "center",
+        }}
+      >
         <input
           type="text"
           name="todoInput"
@@ -51,21 +52,7 @@ function Todo() {
         <button onClick={addTodo}>Add</button>
       </div>
       <ul>{todoList}</ul>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          marginTop: "1em",
-          gap: "90em",
-        }}
-      >
-        <button style={{ padding: "1em" }} onClick={back}>
-          Previous
-        </button>
-        <button style={{ padding: "1em" }} onClick={next}>
-          Next
-        </button>
-      </div>
+      <Navigator back="/stopwatch" next="/progressbar" />
     </div>
   );
 }

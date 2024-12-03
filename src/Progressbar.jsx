@@ -1,14 +1,7 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import Navigator from "./Navigator.jsx";
 
 function Progressbar() {
-  const navigate = useNavigate();
-  const back = () => {
-    navigate("/todo");
-  };
-  const next = () => {
-    navigate("/submitform");
-  };
   const [percent, setPercent] = useState(0);
   const [computed, setComputed] = useState(0);
   const handleChange = (e) => {
@@ -25,7 +18,7 @@ function Progressbar() {
     }
   };
   return (
-    <div>
+    <div style={{ textAlign: "center" }}>
       <h1>Progress Bar</h1>
       <div
         style={{
@@ -33,6 +26,7 @@ function Progressbar() {
           width: "30vw",
           border: "solid black",
           borderRadius: "1em",
+          margin: "auto",
         }}
       >
         <div
@@ -60,21 +54,7 @@ function Progressbar() {
           Input percentage
         </form>
       </div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          marginTop: "1em",
-          gap: "90em",
-        }}
-      >
-        <button style={{ padding: "1em" }} onClick={back}>
-          Previous
-        </button>
-        <button style={{ padding: "1em" }} onClick={next}>
-          Next
-        </button>
-      </div>
+      <Navigator back="/todo" next="/contacts" />
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import Navigator from "./Navigator.jsx";
 
 function Colorpicker() {
   const [color, setColor] = useState("#ffffff");
@@ -38,6 +38,7 @@ function Colorpicker() {
         value={color}
         style={{ margin: "auto", marginTop: "1em" }}
       />
+      <Navigator back="/contacts" next="/maxcount" />
     </div>
   );
 }
