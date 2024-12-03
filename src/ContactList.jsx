@@ -1,7 +1,7 @@
 import propTypes from "prop-types";
 
 function ContactList(props) {
-  return (
+  return props.name ? (
     <>
       <div
         style={{
@@ -20,18 +20,12 @@ function ContactList(props) {
         </ul>
       </div>
     </>
-  );
+  ) : null;
 }
 ContactList.propTypes = {
   name: propTypes.string,
   number: propTypes.number,
   email: propTypes.string,
-};
-
-ContactList.defaultProps = {
-  name: "Guess Contact",
-  number: 1234567890,
-  email: "guess@gmail.com",
 };
 
 export default ContactList;

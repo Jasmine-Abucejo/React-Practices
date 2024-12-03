@@ -8,7 +8,7 @@ import Progressbar from "./Progressbar.jsx";
 import Submitform from "./Submitform.jsx";
 import Maxcount from "./Maxcount.jsx";
 import Contacts from "./Contacts.jsx";
-
+import Colorpicker from "./Colorpicker.jsx";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
     <Routes>
@@ -19,6 +19,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Route path="/submitform" element={<Submitform />} />
       <Route path="/maxcount" element={<Maxcount />} />
       <Route path="/contacts" element={<Contacts />} />
+      <Route path="/colorpicker" element={<Colorpicker />} />
     </Routes>
   </BrowserRouter>
 );
