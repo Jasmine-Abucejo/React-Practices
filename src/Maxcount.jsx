@@ -1,10 +1,13 @@
-import { useState, useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useRef, useEffect } from "react";
+import Navigator from "./Navigator";
 
 function Maxcount() {
   const [count, setCount] = useState(0);
   const [time, setTime] = useState(10);
   const timeLeft = useRef(null);
+  useEffect(() => {
+    timmer();
+  }, []);
   const addCount = () => {
     setCount((prev) => prev + 1);
   };
@@ -20,15 +23,21 @@ function Maxcount() {
       });
     }, 1000);
   };
-  // timmer();
+
   return (
     <div style={{ textAlign: "center" }}>
       <h1>Maxcount</h1>
       <p>{count}</p>
       <p>Time left: {time}</p>
-      <button onClick={timmer} id="plusBtn">
-        +
-      </button>
+      {time > 0 ? (
+        <button onClick={addCount} id="plusBtn">
+          +
+        </button>
+      ) : (
+        <p>Time is up!</p>
+      )}
+
+      <Navigator back="./colorpicker" next="./maxcount" />
     </div>
   );
 }
