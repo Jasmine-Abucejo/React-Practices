@@ -1,15 +1,16 @@
 import { useState } from "react";
 import Navigator from "./Navigator.jsx";
+import "./index.css";
 
 function App() {
   const [count, setCount] = useState(0);
   const [message, setMessage] = useState("Zero");
   const increase = () => {
-    setCount(count + 1);
+    setCount((c) => c + 1);
     display(count + 1);
   };
   const decrease = () => {
-    setCount(count - 1);
+    setCount((c) => c - 1);
     display(count - 1);
   };
   const reset = () => {
@@ -25,38 +26,44 @@ function App() {
       setMessage("Positive");
     }
   };
-  const next = () => {
-    navigate("/stopwatch");
-  };
+
   return (
-    <div style={{ justifyContent: "center" }}>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <button onClick={increase}>Increase</button>
-        <div style={{ border: "solid black", margin: "1em", padding: "1em" }}>
-          <p id="count"> {count} </p>
+    <div className=" bg-gradient-to-tr from-white via-gray-900 to-violet-900 justify-center flex flex-1 w-screen h-screen">
+      <div className="bg-white bg-opacity-10 w-60">
+        <div className="flex flex-row justify-center items-center mt-8">
+          <button
+            onClick={decrease}
+            className="text-red-500 font-bold text-stroke-black font-serif text-lg"
+          >
+            Decrease
+          </button>
+          <div className="m-4 font-black">
+            <p id="count"> {count} </p>
+          </div>
+          <button
+            onClick={increase}
+            className="text-green-600 font-bold text-stroke-black font-serif text-lg"
+          >
+            Increase
+          </button>
+          <br />
         </div>
-        <button onClick={decrease}>Decrease</button>
-        <br />
+        <button
+          onClick={reset}
+          className="flex flex-row justify-center items-center mt-4 m-auto text-yellow-300 font-bold text-stroke-black font-serif text-lg"
+        >
+          Reset
+        </button>
+        <div className="text-center mt-4">
+          The current count value is:{" "}
+          <span
+            className={`${count === 0 ? "text-yellow-300" : `${count > 0 ? "text-green-600" : "text-red-500"}`} `}
+          >
+            {message}
+          </span>
+        </div>
+        <Navigator next="./stopwatch" />
       </div>
-      <button
-        onClick={reset}
-        style={{ display: "block", margin: "auto", marginTop: "1em" }}
-      >
-        Reset
-      </button>
-      <div
-        style={{ border: "solid black", marginTop: "1em", textAlign: "center" }}
-      >
-        The current count value is: {message}
-      </div>
-      <Navigator next="./stopwatch" />
     </div>
   );
 }

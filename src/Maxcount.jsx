@@ -37,7 +37,7 @@ function Maxcount() {
         <p>Time is up!</p>
       )}
 
-      <Navigator back="./colorpicker" next="./maxcount" />
+      <Navigator back="/colorpicker" next="/maxcount" />
     </div>
   );
 }
