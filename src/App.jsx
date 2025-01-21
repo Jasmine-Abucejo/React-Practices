@@ -28,21 +28,21 @@ function App() {
   };
 
   return (
-    <div className=" bg-gradient-to-tr from-white via-gray-900 to-violet-900 justify-center flex flex-1 w-screen h-screen">
-      <div className="bg-white bg-opacity-10 w-60">
+    <div className=" bg-gradient-to-tr from-white via-gray-900 to-violet-900 justify-center flex flex-1 w-screen h-screen items-center">
+      <div className="bg-white bg-opacity-10 w-80 h-80">
         <div className="flex flex-row justify-center items-center mt-8">
           <button
             onClick={decrease}
-            className="text-red-500 font-bold text-stroke-black font-serif text-lg"
+            className="text-red-500 font-bold text-stroke-black font-serif text-lg hover:text-2xl"
           >
             Decrease
           </button>
-          <div className="m-4 font-black">
+          <div className="m-4 font-black text-2xl ">
             <p id="count"> {count} </p>
           </div>
           <button
             onClick={increase}
-            className="text-green-600 font-bold text-stroke-black font-serif text-lg"
+            className="text-green-600 font-bold text-stroke-black font-serif text-lg hover:text-2xl"
           >
             Increase
           </button>
@@ -50,7 +50,7 @@ function App() {
         </div>
         <button
           onClick={reset}
-          className="flex flex-row justify-center items-center mt-4 m-auto text-yellow-300 font-bold text-stroke-black font-serif text-lg"
+          className="flex flex-row justify-center items-center mt-4 m-auto text-yellow-300 font-bold text-stroke-black font-serif text-lg hover:text-2xl"
         >
           Reset
         </button>
