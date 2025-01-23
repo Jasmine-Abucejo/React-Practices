@@ -25,31 +25,26 @@ function Stopwatch() {
   };
 
   return (
-    <div style={{ textAlign: "center", justifyContent: "center" }}>
-      <h1>Stopwatch</h1>
-      <p>
-        {mins} mins {sec} secs
-      </p>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          gap: "1em",
-          justifyContent: "center",
-        }}
-      >
-        <button style={{ backgroundColor: "green" }} onClick={setTimer}>
-          Start
-        </button>
-        <button style={{ backgroundColor: "red" }} onClick={stopTimer}>
-          Stop
-        </button>
-        <button style={{ backgroundColor: "yellow" }} onClick={resetTimer}>
-          Reset
-        </button>
-      </div>
+    <div className="text-center flex flex-col flex-1 justify-center items-center w-screen h-screen gap-4">
+      <p className="mt-8 text-2xl font-extrabold">Stopwatch</p>
+      <div className="flex flex-col items-center justify-center w-80 h-80 gap-4 bg-slate-500 bg-opacity-10">
+        <p>
+          {mins} mins {sec} secs
+        </p>
+        <div className="flex flex-row justify-center items-center gap-4 ">
+          <button className="bg-green-600 p-3  rounded-lg" onClick={setTimer}>
+            Start
+          </button>
+          <button className="bg-red-600 p-3 rounded-lg" onClick={stopTimer}>
+            Stop
+          </button>
+          <button className="bg-yellow-400 p-3 rounded-lg" onClick={resetTimer}>
+            Reset
+          </button>
+        </div>
 
-      <Navigator back="/" next="/todo" />
+        <Navigator back="/" next="/todo" />
+      </div>
     </div>
   );
 }

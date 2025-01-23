@@ -14,7 +14,7 @@ export default {
           "-webkit-text-stroke": "1px white",
         },
         ".text-stroke": {
-          "-webkit-text-stroke": "1px currentColor", // Uses the current text color
+          "-webkit-text-stroke": "1px currentColor",
         },
       });
     },

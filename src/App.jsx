@@ -33,16 +33,16 @@ function App() {
         <div className="flex flex-row justify-center items-center mt-8">
           <button
             onClick={decrease}
-            className="text-red-500 font-bold text-stroke-black font-serif text-lg hover:text-2xl"
+            className="text-red-500 font-bold text-stroke font-serif text-lg "
           >
             Decrease
           </button>
-          <div className="m-4 font-black text-2xl ">
+          <div className="m-4 font-black text-2xl text-stroke-white">
             <p id="count"> {count} </p>
           </div>
           <button
             onClick={increase}
-            className="text-green-600 font-bold text-stroke-black font-serif text-lg hover:text-2xl"
+            className="text-green-600 font-bold text-stroke font-serif text-lg "
           >
             Increase
           </button>
@@ -50,12 +50,14 @@ function App() {
         </div>
         <button
           onClick={reset}
-          className="flex flex-row justify-center items-center mt-4 m-auto text-yellow-300 font-bold text-stroke-black font-serif text-lg hover:text-2xl"
+          className="flex flex-row justify-center items-center mt-4 m-auto text-yellow-300 font-bold text-stroke font-serif text-lg "
         >
           Reset
         </button>
-        <div className="text-center mt-4">
-          The current count value is:{" "}
+        <div className="text-center mt-4 ">
+          <span className="text-stroke-white">
+            The current count value is:{" "}
+          </span>
           <span
             className={`${count === 0 ? "text-yellow-300" : `${count > 0 ? "text-green-600" : "text-red-500"}`} `}
           >
