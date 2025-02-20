@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Navigator from "./Navigator.jsx";
+import { TbNumbers } from "react-icons/tb";
 import "./index.css";
 
 function App() {
@@ -28,9 +29,12 @@ function App() {
   };
 
   return (
-    <div className=" bg-gradient-to-tr from-white via-gray-900 to-violet-900 justify-center flex flex-1 w-screen h-screen items-center">
-      <div className="bg-white bg-opacity-10 w-80 h-80">
-        <div className="flex flex-row justify-center items-center mt-8">
+    <div className=" bg-gradient-to-tr from-white via-gray-900 to-violet-900 justify-center flex flex-col flex-1 w-screen h-screen items-center">
+      <p className="mt-8 text-2xl font-extrabold text-white">
+        Counter <TbNumbers className="inline" />
+      </p>
+      <div className="bg-white bg-opacity-10 w-80 h-80 shadow-normal shadow-slate-500 flex flex-col text-center justify-center ">
+        <div className="flex flex-row justify-center items-center mt-4">
           <button
             onClick={decrease}
             className="text-red-500 font-bold text-stroke font-serif text-lg "

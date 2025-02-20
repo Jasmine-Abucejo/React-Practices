@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import Navigator from "./Navigator.jsx";
+import { FaStopwatch } from "react-icons/fa";
 
 function Stopwatch() {
   const [mins, setMins] = useState(0);
@@ -25,20 +26,31 @@ function Stopwatch() {
   };
 
   return (
-    <div className="text-center flex flex-col flex-1 justify-center items-center w-screen h-screen gap-4">
-      <p className="mt-8 text-2xl font-extrabold">Stopwatch</p>
-      <div className="flex flex-col items-center justify-center w-80 h-80 gap-4 bg-slate-500 bg-opacity-10">
+    <div className="text-center flex flex-col flex-1 justify-center items-center w-screen h-screen gap-4 bg-gradient-to-tr from-black to-blue-300">
+      <p className="mt-8 text-2xl font-extrabold ">Stopwatch</p>
+
+      <div className="flex flex-col items-center justify-center w-80 h-80 gap-4 bg-slate-900 bg-opacity-10">
+        <FaStopwatch className="inline-block " />
         <p>
           {mins} mins {sec} secs
         </p>
         <div className="flex flex-row justify-center items-center gap-4 ">
-          <button className="bg-green-600 p-3  rounded-lg" onClick={setTimer}>
+          <button
+            className="bg-green-600 p-3  rounded-lg shadow-lg shadow-green-400"
+            onClick={setTimer}
+          >
             Start
           </button>
-          <button className="bg-red-600 p-3 rounded-lg" onClick={stopTimer}>
+          <button
+            className="bg-red-600 p-3 rounded-lg shadow-lg shadow-red-400"
+            onClick={stopTimer}
+          >
             Stop
           </button>
-          <button className="bg-yellow-400 p-3 rounded-lg" onClick={resetTimer}>
+          <button
+            className="bg-yellow-400 p-3 rounded-lg shadow-lg shadow-yellow-300"
+            onClick={resetTimer}
+          >
             Reset
           </button>
         </div>
