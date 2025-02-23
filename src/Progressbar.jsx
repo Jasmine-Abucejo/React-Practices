@@ -20,7 +20,7 @@ function Progressbar() {
   return (
     <div style={{ textAlign: "center" }}>
       <h1>Progress Bar</h1>
-      <div
+      {/* <div
         style={{
           height: "2em",
           width: "30vw",
@@ -41,7 +41,7 @@ function Progressbar() {
         >
           {percent}%
         </div>
-      </div>
+      </div> */}
       <div style={{ marginTop: "1em" }}>
         <progress value={percent * 0.01} /> {percent}%
         <form action="">
@@ -54,7 +54,7 @@ function Progressbar() {
           Input percentage
         </form>
       </div>
-      <Navigator back="/todo" next="/contacts" />
+      <Navigator back="/todo" next="/colorpicker" />
     </div>
   );
 }

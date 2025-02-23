@@ -18,13 +18,14 @@ function Navigator(props) {
           Previous
         </button>
       ) : null}
-
-      <button
-        className="p-4 bg-white border-4 border-black rounded-2xl hover:border-green-500"
-        onClick={next}
-      >
-        Next
-      </button>
+      {props.next ? (
+        <button
+          className="p-4 bg-white border-4 border-black rounded-2xl hover:border-green-500"
+          onClick={next}
+        >
+          Next
+        </button>
+      ) : null}
     </div>
   );
 }

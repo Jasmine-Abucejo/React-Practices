@@ -38,7 +38,7 @@ function Colorpicker() {
         value={color}
         style={{ margin: "auto", marginTop: "1em" }}
       />
-      <Navigator back="/contacts" next="/maxcount" />
+      <Navigator back="/progressbar" />
     </div>
   );
 }
